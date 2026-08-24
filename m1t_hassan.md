@@ -14,11 +14,12 @@
 -eat the bread 
 
 (Steps with Mr.Norris)
--
--
--
--
--
--
+-Get 2 pieces of bread, place on counter
+-pick up knife and PB
+-put down knife, open jar of PB, put lid down
+-pick up knife n put it in the PB jar
+-spread PB on one side of bread
+-Place PB side of bread onto other side of bread
+
 ## Done when
 -you put the peanut butter on the bread 
