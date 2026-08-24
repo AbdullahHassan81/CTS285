@@ -23,3 +23,6 @@
 
 ## Done when
 -you put the peanut butter on the bread 
+
+(Steps with Mr Norris)
+-we have 2 pieces of bread facing each other with peanut butter in between
