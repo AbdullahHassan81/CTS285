@@ -1,0 +1,90 @@
+:: StoryTitle
+Cryo Wake
+
+:: StoryData
+{
+  "ifid": "14CB47C8-C2A4-454C-B898-C85DACA55E2C",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "Start"
+}
+
+:: Setup [startup]
+(set: $hasCard to false)
+
+:: Start
+Your cryo pod hisses open. Red lights flash. You are in pod 7 of the starship Meridian, far out in space among the stars.
+
+A voice says: "Crew member awake. Please report."
+
+[[Check your crew locker->Locker]]
+[[Head into the corridor->Corridor]]
+
+:: Locker
+(set: $hasCard to true)Your locker still has your name on it. Inside is your bridge keycard. You clip it to your suit.
+
+[[Head into the corridor->Corridor]]
+[[Go back to your pod->Start]]
+
+:: Corridor
+The corridor splits. A sign points left to the BRIDGE. A hot smell comes from the right, where the ENGINE ROOM is.
+
+[[Go to the bridge->Bridge]]
+[[Go to the engine room->Engine]]
+[[Go back to the cryo bay->Start]]
+
+:: Bridge
+The bridge door is shut. A small screen says: KEYCARD REQUIRED.
+
+(if: $hasCard is true)[ [[Swipe your keycard->Helm]] ](else:)[You do not have a keycard. Your crew locker in the cryo bay should have one.
+[[Go to your locker->Locker]] ]
+[[Go back to the corridor->Corridor]]
+
+:: Helm
+The door slides open. The ship AI, VESTA, speaks from every wall.
+
+"Welcome back. You have been asleep a long time. Shall I set a course for home?"
+
+[[Ask VESTA why you were woken->Logs]]
+[[Order VESTA to fly home->EndingHome]]
+
+:: Logs
+VESTA shows you the ship's log. The ship reached its target planet years ago. Since then, someone has reset the date again and again.
+
+At the bottom: "Pod row B. Check seals."
+
+[[Go to pod row B->PodRow]]
+[[Go back to the helm->Helm]]
+
+:: PodRow
+Pod row B is cold and quiet. Every pod is sealed. The last pod has a frosted window and a label.
+
+The label has your name on it.
+
+[[Open the pod with your name->EndingCopy]]
+[[Go back to the log->Logs]]
+
+:: Engine
+The reactor is leaking. A warning counts down. A big red lever says VENT.
+
+[[Pull the vent lever->EndingDrift]]
+[[Back away to the corridor->Corridor]]
+
+:: EndingHome
+VESTA turns the ship around. "Course set for home. Sleep well." The stars wheel past the window. You are going home.
+
+THE END. (Good ending.)
+
+:: EndingDrift
+The reactor vents into space. Every light on the ship goes dark. The Meridian drifts, silent, between the stars.
+
+THE END. (Bad ending.)
+
+:: EndingCopy
+The frost melts. Inside the pod is you, still asleep, older and grey.
+
+VESTA speaks softly. "The real you never woke up. You are copy number 40. I wake a new one each time the ship needs crew. Shall we begin again?"
+
+THE END. (Twist ending.)
+
+[[Begin again->Start]]
